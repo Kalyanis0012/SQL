@@ -17,10 +17,28 @@
 -- select MIN(Salary) as Minimun_Sal
 -- from Employee;
 -- Using multiple aggregate function
-select 
-count (*) as Total_emp,
-Sum(Salary) as Total_salary,
-AVG(Salary) as Avg_salary,
-Max(Salary) as max_salary,
-Min(salary) as Minimun_Sal
-from employee;
+-- select 
+-- count (*) as Total_emp,
+-- Sum(Salary) as Total_salary,
+-- AVG(Salary) as Avg_salary,
+-- Max(Salary) as max_salary,
+-- Min(salary) as Minimun_Sal
+-- from employee;
+--total salary of it dept
+--select sum(salary) from employee where dept='IT';
+--avg salary from pune emp
+--select avg(salary) from employee where Location='Pune';
+--highest salry from mumbai loc
+--select Max(Salary) from employee where Location='Mumbai';
+--count of it emp
+--select Count(EID) from employee where dept='IT';
+--diff betn max and min salry
+--select (Max(salary)-Min(salary)) from employee;
+--emp of each dept
+--select count(EID),Dept from employee group By dept;
+--total salary for each dept
+--select Sum(salary),dept from employee group by dept;
+--avg salary for all dept
+--select avg(salary),dept from employee group by dept;
+--dept where avg sal is greater than 45000
+select dept from employee having avg(salary)>45000 group by dept;
