@@ -41,4 +41,16 @@
 --avg salary for all dept
 --select avg(salary),dept from employee group by dept;
 --dept where avg sal is greater than 45000
-select dept from employee having avg(salary)>45000 group by dept;
+--select dept from employee having avg(salary)>45000 group by dept;
+--Multiple aggregate functions with GROUP BY
+-- SELECT
+--     dept,
+--     COUNT(*) AS Total_Employees,
+--     SUM(salary) AS Total_Salary,
+--     AVG(salary) AS Average_Salary,
+--     MAX(salary) AS Highest_Salary,
+--     MIN(salary) AS Lowest_Salary
+-- FROM employee
+-- GROUP BY dept;
+--avg salary of it emp groub by city
+select location, avg(salary) from employee where dept='IT' group by location;
