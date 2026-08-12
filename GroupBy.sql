@@ -5,4 +5,25 @@
 --average salary for each city.
 --select avg(salary),location from employee group by location;
 --departments having more than 2 employees
-select dept from employee group by dept having count(EID)>2;
+--select dept from employee group by dept having count(EID)>2;
+--departments whose total salary is greater than 100000.
+--select dept,sum(salary) from employee group by dept having sum(salary)>100000;
+--department having the highest average salary
+-- SELECT dept, AVG(salary) AS avg_salary
+-- FROM employee
+-- GROUP BY dept
+-- ORDER BY avg_salary DESC
+-- FETCH FIRST 1 ROW ONLY;
+--city having highest total salary
+-- select Location,Max(Salary) as Highest_salary
+-- from employee group by location 
+-- order by Highest_salary DESC 
+-- fetch First 1 row only;
+--Departments where minimum salary is greater than 40000
+-- select dept, min(Salary) 
+-- from employee 
+-- group by dept 
+-- having min(salary)>40000;
+--Average salary of IT employees in each city
+select salary ,location 
+from employee where dept='IT'  ;
