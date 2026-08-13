@@ -8,7 +8,9 @@
 --employees sorted by department and then salary from highest to lowest.
 -- select dept,salary from employee order by dept asc , salary desc;
 --top 3 highest-paid employees.
-select EName,salary
-from employee 
-order by salary DESC 
-fetch First 3 row only ;
+-- select EName,salary
+-- from employee 
+-- order by salary DESC 
+-- fetch First 3 row only ;
+--departments in descending alphabetical order.
+select dept from employee order by dept desc;
