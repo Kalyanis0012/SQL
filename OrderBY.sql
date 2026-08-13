@@ -1,0 +1,14 @@
+--all employees alphabetically sorted by name .
+-- select * from employee 
+-- order by Ename ASC;
+--unique dept
+-- select DISTINCT dept from employee order by dept Desc;
+-- --unique cities n alphabetical order
+-- select DISTINCT location from employee order by location asc;
+--employees sorted by department and then salary from highest to lowest.
+-- select dept,salary from employee order by dept asc , salary desc;
+--top 3 highest-paid employees.
+select EName,salary
+from employee 
+order by salary DESC 
+fetch First 3 row only ;
