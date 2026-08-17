@@ -18,10 +18,14 @@
 -- ON e.dept_id = d.dept_id;
 
 -- insert into dept values(50,'Sales');
-UPDATE employee e
-SET dept_id = (
-    SELECT d.dept_id
-    FROM dept d
-    WHERE d.dname = e.dept
-);
-commit;
+-- UPDATE employee e
+-- SET dept_id = (
+--     SELECT d.dept_id
+--     FROM dept d
+--     WHERE d.dname = e.dept
+-- );
+-- commit;
+SELECT e.ename, e.salary, d.dname
+FROM employee e
+INNER JOIN dept d
+ON e.dept_id = d.dept_id;
