@@ -34,7 +34,7 @@
 -- Inner Join dept d 
 -- on e.dept_id =d.dept_id;
 --Display the employee name and department name of employees who work in IT.
-select e.ename ,d.dname from employee employee
+select e.ename ,d.dname from employee e
 Inner JOIN dept d 
 on e.dept_id=d.dept_id
-where dept='IT';
+where d.dname='IT';
