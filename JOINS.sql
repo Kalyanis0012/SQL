@@ -51,4 +51,4 @@ select e.ename,d.dname ,salary
 from employee e
 Inner Join dept d 
 on e.dept_id=d.dept_id 
-order by salary DESC;
+order by e.salary DESC;
