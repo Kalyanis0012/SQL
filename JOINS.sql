@@ -34,7 +34,14 @@
 -- Inner Join dept d 
 -- on e.dept_id =d.dept_id;
 --Display the employee name and department name of employees who work in IT.
-select e.ename ,d.dname from employee e
-Inner JOIN dept d 
+-- select e.ename ,d.dname from employee e
+-- Inner JOIN dept d 
+-- on e.dept_id=d.dept_id
+-- where d.dname='IT';
+--Display employee name, salary and department name
+--  for employees whose salary is greater than 50000.
+select e.ename, e.salary,d.dname 
+from employee e
+INNER JOIN dept d 
 on e.dept_id=d.dept_id
-where d.dname='IT';
+where e.salary>45000;
