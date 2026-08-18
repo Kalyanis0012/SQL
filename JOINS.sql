@@ -25,7 +25,16 @@
 --     WHERE d.dname = e.dept
 -- );
 -- commit;
-SELECT e.ename, e.salary, d.dname
-FROM employee e
-INNER JOIN dept d
-ON e.dept_id = d.dept_id;
+-- SELECT e.ename, e.salary, d.dname
+-- FROM employee e
+-- INNER JOIN dept d
+-- ON e.dept_id = d.dept_id;
+--Display employee name and department name.
+-- Select e.ename, d.dname from employee e 
+-- Inner Join dept d 
+-- on e.dept_id =d.dept_id;
+--Display the employee name and department name of employees who work in IT.
+select e.ename ,d.dname from employee employee
+Inner JOIN dept d 
+on e.dept_id=d.dept_id
+where dept='IT';
