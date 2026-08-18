@@ -40,8 +40,15 @@
 -- where d.dname='IT';
 --Display employee name, salary and department name
 --  for employees whose salary is greater than 50000.
-select e.ename, e.salary,d.dname 
+-- select e.ename, e.salary,d.dname 
+-- from employee e
+-- INNER JOIN dept d 
+-- on e.dept_id=d.dept_id
+-- where e.salary>45000;
+--Display employee name, department name and salary, 
+--  sorted by salary from highest to lowest.
+select e.ename,d.dname ,salary 
 from employee e
-INNER JOIN dept d 
-on e.dept_id=d.dept_id
-where e.salary>45000;
+Inner Join dept d 
+on e.dept_id=d.dept_id 
+order by salary DESC;
