@@ -54,8 +54,16 @@
 -- order by e.salary DESC;
 --Find the average salary of each department and 
 --  display the department name with its average salary.
-select avg(e.Salary),d.dname
-from employee e
-Inner JOIN dept d 
-ON e.dept_id=d.dept_id 
-group by d.dname;
+-- select avg(e.Salary),d.dname
+-- from employee e
+-- Inner JOIN dept d 
+-- ON e.dept_id=d.dept_id 
+-- group by d.dname;
+--Display departments from the 
+--  highest average salary to the lowest average salary.
+select d.dname ,avg(e.salary)
+from employee e 
+Inner Join dept d 
+On e.dept_id=d.dept_id
+group by d.dname
+order by avg(e.salary) desc;
