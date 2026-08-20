@@ -80,11 +80,19 @@
 -- ON e.dept_id=d.dept_id
 -- group by d.dname 
 -- having count(e.eid)>1;
---Display the department name and total salary of each department,
+--Q(9)Display the department name and total salary of each department,
 -- but only display departments whose total salary is greater than 100000.
-select d.dname, sum(e.salary)
+-- select d.dname, sum(e.salary)
+-- from employee e 
+-- Inner join dept d 
+-- on e.dept_id=d.dept_id 
+-- group by d.dname 
+-- having sum(e.salary)>100000;
+--Q10) Display the department name, number of employees, and average salary for each department,
+-- but only show departments where the average salary is greater than 45000.
+select d.dname, count(e.eid),avg(salary)
 from employee e 
-Inner join dept d 
-on e.dept_id=d.dept_id 
+Inner Join dept d 
+on e.dept_id=d.dept_id
 group by d.dname 
-having sum(e.salary)>100000;
+having avg(salary)>45000;
