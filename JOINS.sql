@@ -74,9 +74,17 @@
 -- on e.dept_id=d.dept_id
 -- group by d.dname;
 --Display only those departments where more than 1 employee works.
-select d.dname ,count(e.eid)
+-- select d.dname ,count(e.eid)
+-- from employee e 
+-- Inner Join dept d 
+-- ON e.dept_id=d.dept_id
+-- group by d.dname 
+-- having count(e.eid)>1;
+--Display the department name and total salary of each department,
+-- but only display departments whose total salary is greater than 100000.
+select d.dname, sum(e.salary)
 from employee e 
-Inner Join dept d 
-ON e.dept_id=d.dept_id
+Inner join dept d 
+on e.dept_id=d.dept_id 
 group by d.dname 
-having count(e.eid)>1;
+having sum(e.salary)>100000;
