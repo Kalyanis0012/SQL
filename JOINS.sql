@@ -61,9 +61,15 @@
 -- group by d.dname;
 --Display departments from the 
 --  highest average salary to the lowest average salary.
-select d.dname ,avg(e.salary)
-from employee e 
-Inner Join dept d 
-On e.dept_id=d.dept_id
-group by d.dname
-order by avg(e.salary) desc;
+-- select d.dname ,avg(e.salary)
+-- from employee e 
+-- Inner Join dept d 
+-- On e.dept_id=d.dept_id
+-- group by d.dname
+-- order by avg(e.salary) desc;
+--Find the number of employees in each department.
+select d.dname, count(e.Eid)
+from employee e
+Inner join dept d
+on e.dept_id=d.dept_id
+group by d.dname;
