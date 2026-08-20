@@ -90,9 +90,9 @@
 -- having sum(e.salary)>100000;
 --Q10) Display the department name, number of employees, and average salary for each department,
 -- but only show departments where the average salary is greater than 45000.
-select d.dname, count(e.eid),avg(salary)
+select d.dname, count(e.eid),avg(e.salary)
 from employee e 
 Inner Join dept d 
 on e.dept_id=d.dept_id
 group by d.dname 
-having avg(salary)>45000;
+having avg(e.salary)>45000;
