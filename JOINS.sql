@@ -68,8 +68,15 @@
 -- group by d.dname
 -- order by avg(e.salary) desc;
 --Find the number of employees in each department.
-select d.dname, count(e.Eid)
-from employee e
-Inner join dept d
-on e.dept_id=d.dept_id
-group by d.dname;
+-- select d.dname, count(e.Eid)
+-- from employee e
+-- Inner join dept d
+-- on e.dept_id=d.dept_id
+-- group by d.dname;
+--Display only those departments where more than 1 employee works.
+select d.dname ,count(e.eid)
+from employee e 
+Inner Join dept d 
+ON e.dept_id=d.dept_id
+group by d.dname 
+having count(e.eid)>1;
