@@ -40,8 +40,14 @@
 -- on e.dept_id=d.dept_id
 -- group by d.dname;
 --8)Display departments that have no employees.
-select d.dname 
+-- select d.dname 
+-- from dept d 
+-- left join employee e 
+-- on e.dept_id=d.dept_id
+-- where e.eid is null;
+--9) display Department Name,Total Employees,Average Salary
+-- for all departments, including departments with no employees.
+select d.dname ,count (e.eid),avg(e.Salary)
 from dept d 
 left join employee e 
-on e.dept_id=d.dept_id
-where e.eid is null;
+on e.dept_id=d.dept_id;
