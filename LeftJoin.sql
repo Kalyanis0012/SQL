@@ -16,7 +16,25 @@
 -- where e.eid is null;
 --4)number of employees in every department, 
 --  including departments with zero employees.
-select d.dname ,count(e.eid) from dept d  
-left join employee e 
-on e.dept_id=d.dept_id
-group by d.dname;
+-- select d.dname ,count(e.eid) from dept d  
+-- left join employee e 
+-- on e.dept_id=d.dept_id
+-- group by d.dname;
+--5) Display all employees and
+-- their department names using LEFT JOIN
+-- select e.ename,d.dname 
+-- from employee e 
+-- left join dept d 
+-- on e.dept_id=d.dept_id;
+--6)employees who do not belong to any department.
+-- select e.ename 
+-- from employee e 
+-- left join dept d 
+-- on e.dept_id=d.dept_id
+-- where d.dname is Null;
+--7)all departments,the numberof employees in each department,
+-- including departments having 0 employees.
+select d.dname,count(e.eid)
+from employee e 
+left join dept d 
+on e.dept_id=d.dept_id;
