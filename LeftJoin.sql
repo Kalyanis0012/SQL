@@ -34,8 +34,14 @@
 -- where d.dname is Null;
 --7)all departments,the numberof employees in each department,
 -- including departments having 0 employees.
-select d.dname,count(e.eid)
+-- select d.dname,count(e.eid)
+-- from dept d 
+-- left join employee e 
+-- on e.dept_id=d.dept_id
+-- group by d.dname;
+--8)Display departments that have no employees.
+select d.dname ,count(e.eid)
 from dept d 
 left join employee e 
 on e.dept_id=d.dept_id
-group by d.dname;
+where count(e.eid) is null;
