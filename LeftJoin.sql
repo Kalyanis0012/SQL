@@ -48,6 +48,7 @@
 --9) display Department Name,Total Employees,Average Salary
 -- for all departments, including departments with no employees.
 select d.dname ,count (e.eid),avg(e.Salary)
-from dept d 
+from dept d  
 left join employee e 
-on e.dept_id=d.dept_id;
+on e.dept_id=d.dept_id 
+group by d.dname;
