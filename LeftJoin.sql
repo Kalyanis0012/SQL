@@ -87,11 +87,10 @@
 --13)Display the dept name, no of employees, total salary, average salary for every department. 
 --Include departments with no employees. 
 --Sort departments by total salary from highest to lowest.
-select d.dname ,count(e.eid) as no_of_Employee,sum(salary) as Total_salary,
- avg(salary) as avg_sal_of_Dept
+select d.dname ,count(e.eid) as no_of_Employee,sum(e.salary) as Total_salary,
+ avg(e.salary) as avg_sal_of_Dept
  from dept d 
  left join employee e 
  on e.dept_id=d.dept_id
  group by d.dname 
  order by total_salary desc;
- 
