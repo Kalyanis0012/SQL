@@ -66,10 +66,10 @@
 -- including departments where no employee exists.
 -- Show only depts whose total salary is greater than ₹80,000, 
 --and sort from highest total salary to lowest.
-select d.dname ,sum(salary) as total_salary
+select d.dname ,sum(e.salary) as total_salary
 from dept d 
 left join employee e 
 on d.dept_id=e.dept_id 
 group by d.dname 
-having sum(salary)>80000
+having sum(e.salary)>80000
 order by total_salary desc;
