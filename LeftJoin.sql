@@ -71,5 +71,5 @@ from dept d
 left join employee e 
 on d.dept_id=e.dept_id 
 group by d.dname 
-having total_salary>80000
+having sum(salary)>80000
 order by total_salary desc;
