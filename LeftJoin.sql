@@ -35,7 +35,7 @@
 --7)all departments,the numberof employees in each department,
 -- including departments having 0 employees.
 select d.dname,count(e.eid)
-from employee e 
-left join dept d 
+from dept d 
+left join employee e 
 on e.dept_id=d.dept_id
 group by d.dname;
