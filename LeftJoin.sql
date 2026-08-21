@@ -37,4 +37,5 @@
 select d.dname,count(e.eid)
 from employee e 
 left join dept d 
-on e.dept_id=d.dept_id;
+on e.dept_id=d.dept_id
+group by d.dname;
