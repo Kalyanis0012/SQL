@@ -47,8 +47,18 @@
 -- where e.eid is null;
 --9) display Department Name,Total Employees,Average Salary
 -- for all departments, including departments with no employees.
-select d.dname ,count (e.eid),avg(e.Salary)
-from dept d  
+-- select d.dname ,count (e.eid),avg(e.Salary)
+-- from dept d  
+-- left join employee e 
+-- on e.dept_id=d.dept_id 
+-- group by d.dname;
+--10)Display all departments having more than 1 employee, 
+--  along with department name and employee count, 
+--  sorted by employee count from highest to lowest.
+select d.dname ,count(e.eid) as Employee_count
+from dept d 
 left join employee e 
 on e.dept_id=d.dept_id 
-group by d.dname;
+group by d.dname 
+having count(e.eid)>1
+order by count(e.eid) desc;
