@@ -40,8 +40,8 @@
 -- on e.dept_id=d.dept_id
 -- group by d.dname;
 --8)Display departments that have no employees.
-select d.dname ,count(e.eid)
+select d.dname 
 from dept d 
 left join employee e 
 on e.dept_id=d.dept_id
-where count(e.eid) is null;
+where e.eid is null;
