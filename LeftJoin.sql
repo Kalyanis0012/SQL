@@ -77,10 +77,21 @@
 --Include departments with no employees. 
 --Show only depts whose average salary is greater than ₹45,000,
 -- and display the highest average salary first.
-select d.dname,avg(e.salary) as avg_salary
-from dept d 
-left join employee e 
-on d.dept_id=e.dept_id
-group by d.dname
-having avg(e.salary)>45000
-order by avg_salary Desc;
+-- select d.dname,avg(e.salary) as avg_salary
+-- from dept d 
+-- left join employee e 
+-- on d.dept_id=e.dept_id
+-- group by d.dname
+-- having avg(e.salary)>45000
+-- order by avg_salary Desc;
+--13)Display the dept name, no of employees, total salary, average salary for every department. 
+--Include departments with no employees. 
+--Sort departments by total salary from highest to lowest.
+select d.dname ,count(e.eid) as no_of_Employee,sum(salary) as Total_salary,
+ avg(salary) as avg_sal_of_Dept
+ from dept d 
+ left join employee e 
+ on e.dept_id=d.dept_id
+ group by d.dname 
+ order by total_salary desc;
+ 
